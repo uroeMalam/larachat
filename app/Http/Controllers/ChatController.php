@@ -33,7 +33,7 @@ class ChatController extends Controller
         $new->message = $request->message;
         $new->save();
 
-        broadcast(new NewChatMessage($new))->toOthers();
+        // broadcast(new NewChatMessage($new))->toOthers();
 
         return $new;
     }
