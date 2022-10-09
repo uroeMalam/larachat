@@ -1,8 +1,11 @@
 <?php
 
+use App\Events\NewChatMessage;
 use App\Http\Controllers\ChatController;
+use App\Models\ChatMessage;
 use App\Models\ChatRoom;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -18,6 +21,12 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+    // $new = new ChatMessage();
+    // // NewChatMessage::dispatch($new);
+    // event(new NewChatMessage($new));
+    if (Auth::check()) {
+        return redirect('/dashboard');
+    }
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
