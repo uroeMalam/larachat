@@ -24,7 +24,6 @@
         "@vitejs/plugin-vue": "^3.1.2",
         "dotenv": "^16.0.3",
         "laravel-echo": "^1.14.0",
-        "pusher-js": "^7.4.0",
         "vue": "^3.2.36"
     }
 }

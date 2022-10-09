@@ -20,6 +20,9 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
 
 Broadcast::channel('chat.{roomId}', function ($user, $roomId) {
     if (Auth::check()) {
-        return ['id'=>$user->id,'name'=>$user->name];
+        return [
+    		'id'=>$user->id,
+    		'name'=>$user->name
+    	];
     }
 });
